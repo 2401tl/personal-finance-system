@@ -1,0 +1,175 @@
+/* 账单管理页面样式 */
+.transactions-container {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.transactions-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 80px;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    font-weight: 600;
+    font-size: 13px;
+    color: #666;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.transaction-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 80px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.transaction-item:hover {
+    background: #f8f9fa;
+}
+
+.transaction-category {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.category-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.category-info {
+    flex: 1;
+}
+
+.category-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.category-path {
+    font-size: 10px;
+    color: #999;
+}
+
+.transaction-note {
+    font-size: 11px;
+    color: #999;
+    margin-top: 2px;
+}
+
+.transaction-date, .transaction-account {
+    font-size: 13px;
+    color: #666;
+}
+
+.transaction-amount {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.action-btns {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btns button {
+    padding: 5px 8px;
+    border: none;
+    background: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-edit {
+    color: #667eea;
+}
+
+.btn-edit:hover {
+    background: #eef2ff;
+}
+
+.btn-delete {
+    color: #dc3545;
+}
+
+.btn-delete:hover {
+    background: #fee;
+}
+
+.type-toggle-modal {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.type-option-modal {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: #f5f7fa;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.type-option-modal.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.category-select-group {
+    margin-bottom: 15px;
+}
+
+.category-select-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .transactions-header {
+        display: none;
+    }
+    
+    .transaction-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .transaction-category {
+        order: 1;
+    }
+    
+    .transaction-date {
+        order: 2;
+    }
+    
+    .transaction-account {
+        order: 3;
+    }
+    
+    .transaction-amount {
+        order: 4;
+        text-align: right;
+    }
+    
+    .action-btns {
+        order: 5;
+        justify-content: flex-end;
+    }
+}
